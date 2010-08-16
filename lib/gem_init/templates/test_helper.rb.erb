@@ -1,0 +1,11 @@
+require "rubygems"
+require "bundler/setup"
+require "test/unit"
+require "<%= gem_name %>"
+
+# Allow declarative test definitions inside modules.
+class Module
+  def test(name, &block)
+    define_method("test_#{name.gsub(/[^a-z0-9]/i, "_")}".to_sym, &block)
+  end
+end

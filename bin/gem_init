@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require "rubygems"
+require "gem_init"
+GemInit::App.new(ARGV[0]).main
